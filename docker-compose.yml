@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ollama:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    entrypoint: ["/bin/bash", "/entrypoint.sh"]
+    ports:
+      - 11434:11434
+    # working_dir: "/src"
+    volumes:
+      - ./entrypoint.sh:/entrypoint.sh
